@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "Futura";
+  font-style: light;
+  font-weight: 300;
+  src: local("Futura"), url("../fonts/FuturaLightC.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Futura"), url("../fonts/FuturaBookC.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: medium;
+  font-weight: 700;
+  src: local("Futura"), url("../fonts/FuturaMediumC.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: bold;
+  font-weight: 900;
+  src: local("Futura"), url("../fonts/FuturaDemiC.woff") format("woff");
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #efefef;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Futura", serif;
+  font-size: 16px;
+  color: #efefef;
+  background-color: #161616;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+}
+
+label span {
+  background: #fff;
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+span:nth-of-type(1) {
+  width: 50%;
+}
+
+span:nth-of-type(2) {
+  width: 100%;
+}
+
+span:nth-of-type(3) {
+  width: 75%;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(8px, 0px);
+}
+
+input[type=checkbox]:checked ~ span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+input[type=checkbox]:checked ~ span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(30px, -11px) rotatez(45deg);
+}
+
+.header {
+  padding-top: 30px;
+  position: relative;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.header__logo:hover {
+  color: #881616;
+}
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__item {
+  margin-right: 80px;
+}
+.header__item:last-child {
+  margin-right: 0;
+}
+.header__vk {
+  fill: #881616;
+  transition: 0.3s ease;
+}
+.header__vk:hover {
+  fill: #efefef;
+}
+.header__link {
+  letter-spacing: 0.2rem;
+  transition: 0.3s ease;
+}
+.header__link:hover {
+  color: #881616;
+}
+.header__menu {
+  display: block;
+}
+.header__toggle {
+  display: none;
+  cursor: pointer;
+}
+.header__toggle-line {
+  width: 30px;
+  height: 1px;
+  background-color: #efefef;
+}
+
+.line2 {
+  max-width: 20px;
+  margin: 10px 0 0 0;
+}
+
+.display-block {
+  display: block;
+}
+
+.intro {
+  padding: 90px 0 0 0;
+  margin: 0 0 150px 0;
+}
+.intro__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.intro__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 0 0;
+}
+.intro__title {
+  font-size: 50px;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  margin: 0 0 50px 0;
+}
+.intro__title_red {
+  font-size: 35px;
+  color: #881616;
+  display: block;
+  padding: 0 0 20px 0;
+}
+.intro__text {
+  font-size: 30px;
+  letter-spacing: 0.2rem;
+  margin: 0 0 50px 0;
+}
+.intro__btn {
+  font-size: 22px;
+  border: 1px solid #efefef;
+  padding: 15px 45px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.intro__btn:hover {
+  background-color: #efefef;
+  color: #161616;
+}
+.intro__img {
+  position: relative;
+}
+.intro__frame {
+  width: 500px;
+  height: 410px;
+  border: 7px solid #881616;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: -1;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about__content {
+  display: flex;
+  flex-direction: column;
+  padding: 35px 0 0 50px;
+}
+.about__title {
+  font-size: 32px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0 0 30px 0;
+}
+.about__text {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+}
+
+.text {
+  margin: 0;
+}
