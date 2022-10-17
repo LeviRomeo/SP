@@ -1,8 +1,6 @@
-let button = document.getElementById('toggle');
-
-let navigation = document.getElementById('menu');
-
-button.addEventListener('click', function(){ 
-  navigation.classList.toggle('display-block');
-  
+$(document).ready(function() {
+  $('.header__toggle').click(function(event){
+    $('.header__toggle, .header__menu').toggleClass('active');
+    $('body').toggleClass('lock');
+  });
 });

@@ -48,11 +48,7 @@ a {
     color: $grey;
 }
 
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
 
-}
 
 
 
@@ -63,6 +59,13 @@ body {
     background-color: $dark-grey;
 }
 
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+}
+
 label {
     display: flex;
     flex-direction: column;
@@ -70,56 +73,44 @@ label {
     cursor: pointer;
 }
 
-label span {
-    background: #fff;
-    border-radius: 10px;
-    height: 7px;
-    margin: 7px 0;
-    transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-
-}
-span:nth-of-type(1) {
-    width: 50%;
-}
-span:nth-of-type(2) {
-    width: 100%;
-}
-span:nth-of-type(3) {
-    width: 75%;
-}
-input[type="checkbox"] {
-    display: none;
-}
-input[type="checkbox"]:checked~span:nth-of-type(1) {
-    transform-origin: bottom;
-    transform: rotatez(45deg) translate(8px, 0px)
-}
-input[type="checkbox"]:checked~span:nth-of-type(2) {
-    transform-origin: top;
-    transform: rotatez(-45deg)
-}
-input[type="checkbox"]:checked~span:nth-of-type(3) {
-    transform-origin: bottom;
-    width: 50%;
-    transform: translate(30px, -11px) rotatez(45deg);
-}
-
-
-
 
 
 .header {
-    padding-top: 30px;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    padding: 10px 0;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $dark-grey;
+        z-index: 2;
+    }
+
     &__wrapper {
+        height: 60px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+    }
+
+    &__left {
+        position: relative;
+        z-index: 3;
     }
 
     &__logo {
         text-transform: uppercase;
         transition: .3s ease;
+
     }
 
     &__logo:hover {
@@ -130,6 +121,8 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+        z-index: 2;
     }
 
     &__item {
@@ -160,29 +153,26 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
 
     &__menu {
         display: block;
-
     }
 
     &__toggle {
         display: none;
-        cursor: pointer;
-    }
-    &__toggle-line {
-        width: 30px;
-        height: 1px;
-        background-color: $grey;
     }
 }
+
 .line2 {
     max-width: 20px;
     margin: 10px 0 0 0;
 }
+
 .display-block {
     display: block;
 }
+
 .intro {
     padding: 90px 0 0 0;
     margin: 0 0 150px 0;
+
     &__wrapper {
         display: flex;
         align-items: center;
@@ -242,47 +232,57 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
         z-index: -1;
     }
 }
+
 .about {
     margin: 0 0 60px 0;
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
     &__content {
         display: flex;
         flex-direction: column;
         padding: 35px 0 0 50px;
     }
+
     &__title {
         font-size: 32px;
         font-weight: 300;
         text-transform: uppercase;
         margin: 0 0 30px 0;
     }
+
     &__text {
         font-size: 24px;
         font-weight: 300;
         margin: 0 0 30px 0;
     }
 }
+
 .text {
     margin: 0;
 }
+
 .portfolio {
     text-align: center;
     margin: 0 0 60px 0;
+
     &__title {
         font-size: 36px;
         text-transform: uppercase;
         margin: 0 0 20px 0;
     }
+
     &__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         margin: 0 0 50px 0;
     }
+
     &__btn {
         font-size: 22px;
         border: 1px solid $grey;
@@ -290,53 +290,64 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
         text-transform: uppercase;
         transition: .3s ease;
     }
+
     &__btn:hover {
         background-color: $grey;
         color: $dark-grey;
     }
 }
+
 .prices {
     text-align: center;
     margin: 0 0 60px 0;
+
     &__title {
         font-size: 36px;
         text-transform: uppercase;
         margin: 0 0 20px 0;
     }
+
     &__list {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
     &__item {
         width: 360px;
         height: 480px;
         border: 1px solid $grey;
         padding: 40px 30px;
     }
+
     &__card {
         display: flex;
         flex-direction: column;
     }
+
     &__card-title {
         font-size: 26px;
         text-transform: uppercase;
         margin: 0 0 40px 0;
     }
+
     &__text {
         font-size: 22px;
         margin: 0 0 50px 0;
     }
+
     &__card-description {
         display: grid;
         grid-template-columns: 2fr 1fr;
         text-align: left;
         margin: 0 0 30px 0;
     }
+
     &__card-items {
         font-size: 20px;
         margin: 0 0 20px 0;
     }
+
     &__card-items_left {
         text-align: right;
     }
@@ -348,11 +359,13 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
         text-transform: uppercase;
         transition: .3s ease;
     }
+
     &__btn:hover {
         background-color: $grey;
         color: $dark-grey;
     }
 }
+
 .footer {
 
     &__wrapper {
@@ -360,25 +373,30 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
         padding: 30px 0 0 0;
         margin: 0 0 30px 0;
     }
+
     &__list {
         display: flex;
         justify-content: space-between;
         align-items: top;
     }
+
     &__item {
         display: flex;
         flex-direction: column;
     }
+
     &__label {
         margin: 0 0 10px 0;
         width: 100%;
     }
+
     &__input {
         background-color: transparent;
         border: 1px solid $grey;
         padding: 10px 15px;
         color: $grey;
     }
+
     &__btn {
         background-color: transparent;
         color: $grey;
@@ -388,16 +406,116 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
         padding: 10px 15px;
         transition: .3s ease;
     }
+
     &__btn:hover {
         color: $dark-grey;
         background-color: $grey;
     }
 }
+
 .link {
     margin: 0 0 15px 0;
     font-size: 16px;
     transition: .3s ease;
 }
+
 .link:hover {
     color: $red;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+    body.lock{
+        overflow: hidden;
+    }
+    .header {
+
+        &__wrapper{
+            height: 30px;
+        }
+        &__logo{
+            font-size: 14px;
+        }
+        &__toggle {
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 20px;
+            z-index: 3;
+        }
+
+        &__toggle:before,
+        &__toggle:after {
+            content: '';
+            background-color: $grey;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: all .3s ease;
+        }
+
+        &__toggle:before {
+            top: 0;
+        }
+
+        &__toggle:after {
+            bottom: 0;
+        }
+        &__toggle.active:before{
+            transform: rotate(45deg);
+            top: 9px;
+        }
+        &__toggle.active:after{
+            transform: rotate(-45deg);
+            bottom: 9px;
+        }
+
+        &__toggle span {
+            position: absolute;
+            background-color: $grey;
+            width: 100%;
+            height: 2px;
+            top: 9px;
+            left: 0;
+            transition: all .3s ease;
+        }
+        &__toggle.active span{
+            transform: scale(0);
+        }
+
+        &__menu {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $dark-grey;
+            padding: 60px 10px 20px 10px;
+            transition: all .3s ease;
+            overflow: auto;
+
+        }
+        &__menu.active{
+            top: 0;
+        }
+        &__list{
+            display: flex;
+            flex-direction: column;
+        }
+        &__item {
+            margin: 0 0 30px 0;
+        }
+        &__link{
+            font-size: 30px;
+        }
+    }
 }
